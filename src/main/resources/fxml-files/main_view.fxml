@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.TextFlow?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="550.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <AnchorPane prefHeight="550.0" prefWidth="180.0" style="-fx-background-color: #222;">
+         <children>
+            <Label layoutX="76.0" layoutY="23.0" text="Hello," textFill="WHITE" />
+            <Label fx:id="userLabel" alignment="CENTER" contentDisplay="CENTER" layoutY="40.0" prefHeight="33.0" prefWidth="180.0" text="USERNAME" textAlignment="CENTER" textFill="WHITE" textOverrun="CLIP" wrapText="true">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            <Button fx:id="logOutButton" layoutX="51.0" layoutY="92.0" mnemonicParsing="false" onAction="#onLogOutButtonClick" prefHeight="29.0" prefWidth="77.0" style="-fx-border-color: #f00; -fx-border-radius: 20; -fx-border-width: 2; -fx-background-color: #fff0;" text="Log-out" textFill="#c70000">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Label alignment="CENTER" contentDisplay="CENTER" layoutY="239.0" prefHeight="15.0" prefWidth="180.0" text="Librarian Admin Controls" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <Button fx:id="addBookButton" layoutX="14.0" layoutY="282.0" mnemonicParsing="false" onAction="#onAddBookButtonClick" prefHeight="25.0" prefWidth="150.0" text="+ Add Book">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Button>
+            <Separator layoutX="14.0" layoutY="162.0" prefHeight="13.0" prefWidth="149.0" />
+            <Button fx:id="deleteBookButton" layoutX="13.0" layoutY="328.0" mnemonicParsing="false" onAction="#onDeleteButtonClick" prefHeight="25.0" prefWidth="150.0" text="- Delete Book" textFill="#bc0d0d">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Button>
+         </children>
+      </AnchorPane>
+      <TabPane layoutX="180.0" prefHeight="550.0" prefWidth="620.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab text="Library">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="288.0" prefWidth="691.0">
+                     <children>
+                        <TableView fx:id="allBooksTable" layoutX="18.0" layoutY="115.0" prefHeight="300.0" prefWidth="585.0">
+                          <columns>
+                            <TableColumn fx:id="idColumn" prefWidth="50.0" text="ID" />
+                            <TableColumn fx:id="titleColumn" prefWidth="266.66664123535156" text="Book Title" />
+                              <TableColumn fx:id="authorColumn" prefWidth="267.33331298828125" text="Book Author" />
+                          </columns>
+                        </TableView>
+                        <Button fx:id="refreshAllButton" layoutX="513.0" layoutY="81.0" mnemonicParsing="false" onAction="#onRefreshAllButtonClick" prefHeight="25.0" prefWidth="90.0" text="Refresh">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Button>
+                        <Label layoutX="16.0" layoutY="12.0" text="CURRENT BOOKS IN LIBRARY" textAlignment="CENTER" textFill="#0689d4">
+                           <font>
+                              <Font name="System Bold" size="40.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="17.0" layoutY="433.0" text="Selected Book:">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="selectedBookLabel" layoutX="108.0" layoutY="429.0" text=" " textFill="#0689d4">
+                           <font>
+                              <Font name="System Italic" size="16.0" />
+                           </font>
+                        </Label>
+                        <Button fx:id="rentButton" layoutX="394.0" layoutY="468.0" mnemonicParsing="false" onAction="#onRentButtonClick" prefHeight="30.0" prefWidth="215.0" style="-fx-border-color: #0ca4c2; -fx-border-radius: 3; -fx-border-width: 2;" text="Rent Book" textFill="#0ca4c2">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Button>
+                        <Label layoutX="21.0" layoutY="83.0" text="Filter:">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="235.0" layoutY="84.0" text="Search:">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Label>
+                        <TextField layoutX="286.0" layoutY="81.0" prefHeight="25.0" prefWidth="215.0" />
+                        <Button fx:id="viewBookButton" defaultButton="true" layoutX="16.0" layoutY="468.0" mnemonicParsing="false" onAction="#onViewBookButtonClick" prefHeight="30.0" prefWidth="369.0" text="Open Book Details Page" textFill="#3e87b1">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Button>
+                        <ComboBox fx:id="filterComboBox" layoutX="64.0" layoutY="80.0" onAction="#onFilterComboBoxAction" prefWidth="150.0" />
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+          <Tab fx:id="myBooksTable" text="My Collection">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Label layoutX="18.0" layoutY="329.0" text="Selected Book:">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="selectedRentedBookLabel" layoutX="107.0" layoutY="325.0" maxWidth="225.0" text="   " textFill="#0689d4">
+                           <font>
+                              <Font name="System Italic" size="16.0" />
+                           </font>
+                        </Label>
+                        <TextFlow layoutX="13.0" layoutY="366.0" prefHeight="122.0" prefWidth="591.0" style="-fx-background-color: #eee;" />
+                     </children></AnchorPane>
+            </content>
+          </Tab>
+        </tabs>
+      </TabPane>
+   </children>
+</AnchorPane>

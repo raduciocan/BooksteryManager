@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.TextFlow?>
+
+<AnchorPane prefHeight="700.0" prefWidth="750.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <GridPane alignment="CENTER_RIGHT" prefHeight="50.0" prefWidth="750.0" style="-fx-background-color: #111;">
+         <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="555.0" minWidth="10.0" prefWidth="555.0" />
+            <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" maxWidth="449.6666463216145" minWidth="10.0" prefWidth="194.33333333333326" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+         </rowConstraints>
+         <children>
+            <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <Label text="Logged in as" textFill="WHITE" />
+                  <Label fx:id="userNameLabel" text="_" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                     <padding>
+                        <Insets left="5.0" />
+                     </padding>
+                  </Label>
+                  <Label text="with" textFill="WHITE">
+                     <padding>
+                        <Insets left="5.0" />
+                     </padding>
+                  </Label>
+                  <Label fx:id="userRoleLabel" text="_" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                     <padding>
+                        <Insets left="5.0" />
+                     </padding>
+                  </Label>
+                  <Label text="privileges" textFill="WHITE">
+                     <padding>
+                        <Insets left="5.0" />
+                     </padding>
+                  </Label>
+               </children>
+               <padding>
+                  <Insets left="28.0" />
+               </padding>
+            </HBox>
+            <Button fx:id="logOutButton" mnemonicParsing="false" onAction="#onLogOutButtonClick" prefHeight="29.0" prefWidth="77.0" style="-fx-border-color: #f00; -fx-border-radius: 20; -fx-border-width: 2; -fx-background-color: #fff0;" text="Log-out" textFill="#c70000" GridPane.columnIndex="1">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <GridPane.margin>
+                  <Insets right="26.0" />
+               </GridPane.margin>
+            </Button>
+         </children>
+      </GridPane>
+      <Label layoutX="28.0" layoutY="77.0" text="Book information" textFill="#0689d4">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Label>
+      <Label fx:id="authorLabel" layoutX="28.0" layoutY="178.0" text="-">
+         <font>
+            <Font name="System Italic" size="16.0" />
+         </font></Label>
+      <Label layoutX="28.0" layoutY="160.0" text="Author">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Label>
+      <Label fx:id="titleLabel" layoutX="28.0" layoutY="125.0" text="-">
+         <font>
+            <Font name="System Italic" size="16.0" />
+         </font></Label>
+      <Label layoutX="28.0" layoutY="107.0" text="Title">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Label>
+      <Label layoutX="28.0" layoutY="214.0" text="Status">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <Label fx:id="statusLabel" layoutX="28.0" layoutY="231.0" text="-">
+         <font>
+            <Font name="System Italic" size="16.0" />
+         </font>
+      </Label>
+      <Separator layoutX="303.0" layoutY="68.0" orientation="VERTICAL" prefHeight="612.0" prefWidth="13.0" />
+      <Label layoutX="338.0" layoutY="77.0" text="Current book's review" textFill="#0689d4">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <TableView fx:id="reviewsTable" layoutX="338.0" layoutY="117.0" prefHeight="166.0" prefWidth="390.0">
+        <columns>
+            <TableColumn fx:id="reviewRatingColumn" prefWidth="65.3333740234375" text="Rating" />
+          <TableColumn fx:id="reviewReaderColumn" prefWidth="192.66668701171875" text="Reader's name" />
+          <TableColumn fx:id="reviewDateColumn" prefWidth="131.33331298828125" text="Review date" />
+        </columns>
+      </TableView>
+      <Button fx:id="addReviewButton" defaultButton="true" layoutX="543.0" layoutY="627.0" mnemonicParsing="false" onAction="#onAddReviewButtonClick" prefHeight="37.0" prefWidth="185.0" text="Add Review" textFill="#3e87b1">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Button>
+      <ComboBox fx:id="reviewsSortSelector" layoutX="557.0" layoutY="73.0" prefHeight="25.0" prefWidth="170.0" />
+      <Label layoutX="502.0" layoutY="77.0" text="Sort by:">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <TextArea fx:id="reviewTextArea" layoutX="338.0" layoutY="482.0" prefHeight="119.0" prefWidth="390.0" promptText="Write review here..." />
+      <Label layoutX="338.0" layoutY="431.0" text="Add new rating and book review" textFill="#0689d4">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <Slider fx:id="ratingSlider" blockIncrement="1.0" layoutX="546.0" layoutY="434.0" majorTickUnit="1.0" max="5.0" minorTickCount="1" prefHeight="37.0" prefWidth="185.0" showTickLabels="true" showTickMarks="true" snapToTicks="true" value="2.5">
+         <tooltip>
+            <Tooltip text="Choose a rating for the book" />
+         </tooltip>
+      </Slider>
+      <Separator layoutX="28.0" layoutY="292.0" prefHeight="7.0" prefWidth="253.0" />
+      <TextFlow layoutX="338.0" layoutY="284.0" prefHeight="119.0" prefWidth="390.0" style="-fx-background-color: #eee;" />
+      <Label layoutX="28.0" layoutY="327.0" text="Book history" textFill="#0689d4">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <TableView layoutX="28.0" layoutY="370.0" prefHeight="299.0" prefWidth="253.0">
+         <columns>
+            <TableColumn prefWidth="155.3333740234375" text="Action" />
+            <TableColumn prefWidth="105.3333740234375" text="Date" />
+         </columns>
+      </TableView>
+      <Label layoutX="338.0" layoutY="453.0" text="Your rating:" textFill="#00000074">
+         <font>
+            <Font name="System Italic" size="12.0" />
+         </font>
+      </Label>
+      <Label fx:id="ratingLabel" layoutX="404.0" layoutY="453.0" text="0" textFill="#0689d4">
+         <font>
+            <Font name="System Bold Italic" size="12.0" />
+         </font>
+      </Label>
+      <Button fx:id="deleteReviewButton" layoutX="338.0" layoutY="627.0" mnemonicParsing="false" onAction="#onDeleteReviewButtonClick" prefHeight="37.0" prefWidth="185.0" text="Delete Review" textFill="#3e87b1">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>
