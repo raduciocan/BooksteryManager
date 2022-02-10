@@ -1,11 +1,11 @@
-package com.clientmodule.models;
+package com.clientmodule.queryutils;
 
-public enum userRoles {
+public enum UserRoles {
     READER("Reader"),
     LIBRARIAN("Librarian");
 
     public static String rol;
 
-    userRoles(String rol) {
+    UserRoles(String rol) {
     }
 }

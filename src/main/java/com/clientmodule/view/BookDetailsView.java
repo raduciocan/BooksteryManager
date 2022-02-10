@@ -1,8 +1,8 @@
-package com.clientmodule.views;
+package com.clientmodule.view;
 
-import com.clientmodule.controllers.BookDetailsController;
-import com.clientmodule.models.Book;
-import com.clientmodule.models.User;
+import com.clientmodule.controller.BookDetailsController;
+import com.clientmodule.model.Book;
+import com.clientmodule.model.User;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.stage.Modality;

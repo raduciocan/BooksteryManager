@@ -1,4 +1,4 @@
-package com.clientmodule.views;
+package com.clientmodule.view;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;

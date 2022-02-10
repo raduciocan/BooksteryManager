@@ -1,11 +1,11 @@
-package com.clientmodule.controllers;
+package com.clientmodule.controller;
 
-import com.clientmodule.EntityMaster;
-import com.clientmodule.StagesMaster;
-import com.clientmodule.models.Book;
-import com.clientmodule.models.Review;
-import com.clientmodule.models.ReviewsSortModes;
-import com.clientmodule.models.User;
+import com.clientmodule.queryutils.EntityMaster;
+import com.clientmodule.view.StagesMaster;
+import com.clientmodule.model.Book;
+import com.clientmodule.model.Review;
+import com.clientmodule.queryutils.ReviewsSortModes;
+import com.clientmodule.model.User;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;

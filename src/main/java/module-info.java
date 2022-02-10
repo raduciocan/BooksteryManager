@@ -4,8 +4,9 @@ module com.clientmodule {
     requires jakarta.persistence;
 
 
-    opens com.clientmodule.views;
-    opens com.clientmodule.models;
-    opens com.clientmodule.controllers;
+    opens com.clientmodule.view;
+    opens com.clientmodule.model;
+    opens com.clientmodule.controller;
     opens com.clientmodule;
+    opens com.clientmodule.queryutils;
 }

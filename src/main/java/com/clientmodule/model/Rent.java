@@ -1,4 +1,4 @@
-package com.clientmodule.models;
+package com.clientmodule.model;
 
 import jakarta.persistence.*;
 
@@ -6,34 +6,31 @@ import java.sql.Date;
 import java.util.Objects;
 
 @Entity
-@Table(name = "Reviews")
-public class Review {
+@Table(name = "Rents")
+public class Rent {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
     @Column(name = "id")
     private int id;
     @Basic
-    @Column(name = "book_id")
-    private Integer bookId;
-    @Basic
     @Column(name = "user_id")
     private Integer userId;
     @Basic
-    @Column(name = "review_text")
-    private String reviewText;
+    @Column(name = "book_id")
+    private Integer bookId;
     @Basic
-    @Column(name = "review_date")
-    private Date reviewDate;
+    @Column(name = "rent_date")
+    private Date rentDate;
     @Basic
-    @Column(name = "review_rating")
-    private Double reviewRating;
+    @Column(name = "rent_due")
+    private Date rentDue;
     @ManyToOne
     @JoinColumn(name = "book_id", referencedColumnName = "id", insertable=false, updatable=false)
     private Book bookByBookId;
-    @ManyToOne()
+
+    @ManyToOne
     @JoinColumn(name = "user_id", referencedColumnName = "id", insertable=false, updatable=false)
     private User userByUserId;
-
 
     public User getUsersByUserId() {
         return userByUserId;
@@ -51,14 +48,6 @@ public class Review {
         this.id = id;
     }
 
-    public Integer getBookId() {
-        return bookId;
-    }
-
-    public void setBookId(Integer bookId) {
-        this.bookId = bookId;
-    }
-
     public Integer getUserId() {
         return userId;
     }
@@ -67,28 +56,28 @@ public class Review {
         this.userId = userId;
     }
 
-    public String getReviewText() {
-        return reviewText;
+    public Integer getBookId() {
+        return bookId;
     }
 
-    public void setReviewText(String reviewText) {
-        this.reviewText = reviewText;
+    public void setBookId(Integer bookId) {
+        this.bookId = bookId;
     }
 
-    public Date getReviewDate() {
-        return reviewDate;
+    public Date getRentDate() {
+        return rentDate;
     }
 
-    public void setReviewDate(Date reviewDate) {
-        this.reviewDate = reviewDate;
+    public void setRentDate(Date rentDate) {
+        this.rentDate = rentDate;
     }
 
-    public Double getReviewRating() {
-        return reviewRating;
+    public Date getRentDue() {
+        return rentDue;
     }
 
-    public void setReviewRating(Double reviewRating) {
-        this.reviewRating = reviewRating;
+    public void setRentDue(Date rentDue) {
+        this.rentDue = rentDue;
     }
 
     @Override
@@ -96,13 +85,13 @@ public class Review {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
-        Review review = (Review) o;
+        Rent rent = (Rent) o;
 
-        if (id != review.id) return false;
-        if (!Objects.equals(bookId, review.bookId)) return false;
-        if (!Objects.equals(userId, review.userId)) return false;
-        if (!Objects.equals(reviewText, review.reviewText)) return false;
-        if (!Objects.equals(reviewDate, review.reviewDate)) return false;
+        if (id != rent.id) return false;
+        if (!Objects.equals(userId, rent.userId)) return false;
+        if (!Objects.equals(bookId, rent.bookId)) return false;
+        if (!Objects.equals(rentDate, rent.rentDate)) return false;
+        if (!Objects.equals(rentDue, rent.rentDue)) return false;
 
         return true;
     }
@@ -110,10 +99,10 @@ public class Review {
     @Override
     public int hashCode() {
         int result = id;
-        result = 31 * result + (bookId != null ? bookId.hashCode() : 0);
         result = 31 * result + (userId != null ? userId.hashCode() : 0);
-        result = 31 * result + (reviewText != null ? reviewText.hashCode() : 0);
-        result = 31 * result + (reviewDate != null ? reviewDate.hashCode() : 0);
+        result = 31 * result + (bookId != null ? bookId.hashCode() : 0);
+        result = 31 * result + (rentDate != null ? rentDate.hashCode() : 0);
+        result = 31 * result + (rentDue != null ? rentDue.hashCode() : 0);
         return result;
     }
 

@@ -5,11 +5,10 @@
              version="3.0">
     <persistence-unit name="default">
 
-        <class>com.clientmodule.models.Book</class>
-        <class>com.clientmodule.models.Rent</class>
-        <class>com.clientmodule.models.Review</class>
-        <class>com.clientmodule.models.User</class>
-        <class>model.Reviews</class>
+        <class>com.clientmodule.model.Book</class>
+        <class>com.clientmodule.model.Rent</class>
+        <class>com.clientmodule.model.Review</class>
+        <class>com.clientmodule.model.User</class>
         <properties>
             <property name="jakarta.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver"/>
             <property name="jakarta.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/biblioteca"/>

@@ -1,4 +1,4 @@
-package com.clientmodule.models;
+package com.clientmodule.queryutils;
 
 public enum BooksSortModes {
     ALL,

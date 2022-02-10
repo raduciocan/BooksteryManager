@@ -1,4 +1,6 @@
-package com.clientmodule;
+package com.clientmodule.view;
+
+import com.clientmodule.queryutils.EntityMaster;
 
 public class StagesMaster {
     private static StagesMaster instance = null;

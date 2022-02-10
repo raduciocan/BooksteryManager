@@ -1,9 +1,10 @@
-package com.clientmodule.controllers;
+package com.clientmodule.controller;
 
-import com.clientmodule.EntityMaster;
-import com.clientmodule.StagesMaster;
-import com.clientmodule.models.*;
-import com.clientmodule.views.BookDetailsView;
+import com.clientmodule.queryutils.EntityMaster;
+import com.clientmodule.view.StagesMaster;
+import com.clientmodule.model.*;
+import com.clientmodule.queryutils.BooksSortModes;
+import com.clientmodule.view.BookDetailsView;
 import javafx.application.Platform;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -25,7 +26,7 @@ import java.util.Optional;
 import java.util.ResourceBundle;
 import java.util.concurrent.atomic.AtomicBoolean;
 
-public class PrimaryController implements Initializable {
+public class LibraryController implements Initializable {
     private EntityMaster entity;
     private BooksSortModes currentSortMode;
     private User currentUser;

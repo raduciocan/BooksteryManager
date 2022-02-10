@@ -1,10 +1,10 @@
-package com.clientmodule.controllers;
+package com.clientmodule.controller;
 
-import com.clientmodule.EntityMaster;
-import com.clientmodule.StagesMaster;
-import com.clientmodule.models.userRoles;
-import com.clientmodule.models.User;
-import com.clientmodule.views.PrimaryView;
+import com.clientmodule.queryutils.EntityMaster;
+import com.clientmodule.view.StagesMaster;
+import com.clientmodule.queryutils.UserRoles;
+import com.clientmodule.model.User;
+import com.clientmodule.view.PrimaryView;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
@@ -27,7 +27,7 @@ public class LoginController implements Initializable {
     @FXML
     private TextField passwordLoginField;
     @FXML
-    private ComboBox<userRoles> roleSignupSelector;
+    private ComboBox<UserRoles> roleSignupSelector;
     @FXML
     private TextField emailSignupField;
     @FXML
@@ -139,7 +139,7 @@ public class LoginController implements Initializable {
         entity = StagesMaster.getInstance().getEntity();
 
         roleSignupSelector.getItems().clear();
-        roleSignupSelector.getItems().addAll(userRoles.values());
+        roleSignupSelector.getItems().addAll(UserRoles.values());
         roleSignupSelector.getSelectionModel().selectFirst();
     }
 }

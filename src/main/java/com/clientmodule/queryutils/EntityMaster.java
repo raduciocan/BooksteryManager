@@ -1,9 +1,9 @@
-package com.clientmodule;
+package com.clientmodule.queryutils;
 
-import com.clientmodule.models.Book;
-import com.clientmodule.models.Rent;
-import com.clientmodule.models.Review;
-import com.clientmodule.models.User;
+import com.clientmodule.model.Book;
+import com.clientmodule.model.Rent;
+import com.clientmodule.model.Review;
+import com.clientmodule.model.User;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
 import jakarta.persistence.Persistence;

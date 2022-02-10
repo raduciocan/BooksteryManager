@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="420.0" prefWidth="300.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.clientmodule.controllers.LoginController">
+<AnchorPane prefHeight="420.0" prefWidth="300.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.clientmodule.controller.LoginController">
    <children>
       <Label alignment="CENTER" layoutY="13.0" prefHeight="17.0" prefWidth="300.0" text="Welcome to Hammer's Library App" textAlignment="CENTER" textFill="#0993c5">
          <font>

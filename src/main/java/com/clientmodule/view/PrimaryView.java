@@ -1,7 +1,7 @@
-package com.clientmodule.views;
+package com.clientmodule.view;
 
-import com.clientmodule.controllers.PrimaryController;
-import com.clientmodule.models.User;
+import com.clientmodule.controller.LibraryController;
+import com.clientmodule.model.User;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.stage.Modality;
@@ -22,7 +22,7 @@ public class PrimaryView {
             FXMLLoader fxmlLoader = new FXMLLoader();
             fxmlLoader.setLocation(getClass().getResource("/fxml-files/main_view.fxml"));
 
-            PrimaryController controller = new PrimaryController();
+            LibraryController controller = new LibraryController();
             controller.loadData(currentUser);
             fxmlLoader.setController(controller);
 
